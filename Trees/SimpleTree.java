@@ -53,7 +53,7 @@ public class SimpleTree {
 	 * tree.
 	 */
 	public void delete(int value) {
-
+		// Algorithm not in book
 	}
 
 	/**
@@ -156,8 +156,6 @@ public class SimpleTree {
 			result = 1 + leftHeight;
 
 		return result;
-
-
 	}
 
 	/**
@@ -168,8 +166,7 @@ public class SimpleTree {
 		if(root != null)
 			return size(root);
 
-		return 0;
-		
+		return 0;		
 	}
 
 	private int size(Node node) {
@@ -194,9 +191,6 @@ public class SimpleTree {
 
 		public Node(int value) {
 			this.value = value;
-		}
-
-		
-		
+		}		
 	}
 }
