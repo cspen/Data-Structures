@@ -26,6 +26,7 @@ public class BinaryTree extends AbstractCollection {
 		}
 	}
 
+	@override
 	public boolean equals(Object object) {
 		if(object == this) return true;
 		if(!(object instanceof BinaryTree)) return false;
@@ -37,12 +38,15 @@ public class BinaryTree extends AbstractCollection {
 			tree.size() == size);
 	}
 
+	@override
 	public int hashCode() {
 		return root.hashCode() + left.hashCode() + right.hashCode() + size;
 	}
 
+	@override
 	public int size() { return size; }
 
+	@override
 	public Iterator iterator() {
 		return new java.util.Iterator() {
 			private boolean rootDone;
