@@ -26,23 +26,21 @@ public class TreeTest {
 		st.insert(7);
 		st.insert(9);
 		st.insert(8);
+		st.insert(10);
+		st.insert(11);
+		st.insert(12);
 
 		System.out.println("Inorder...");
 		st.printInOrder();
 		System.out.println();
-		System.out.println("Preorder....");
+		/* System.out.println("Preorder....");
 		st.printPreOrder();
 		System.out.println();
 		System.out.println("Postorder....");
-		st.printPostOrder();
+		st.printPostOrder(); */
 
 		System.out.println();
 		System.out.println("Height = " + st.height());
-
-
 		System.out.println("Size = " + st.size());
-		
-
 	}
-
 }
