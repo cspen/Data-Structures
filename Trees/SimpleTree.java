@@ -178,6 +178,11 @@ public class SimpleTree {
 		return size;
 	}
 
+	public void defoliate() { 
+		root.defoliate();
+	}
+
+
 /////////////////////////////// Inner class definition
 
 	/**
@@ -191,6 +196,27 @@ public class SimpleTree {
 
 		public Node(int value) {
 			this.value = value;
+		}
+
+		public void defoliate() { 
+		if(this == null) return;		
+		if(left == null && right == null) {
+			root = null;
+			return;
+		}
+		if(left != null) {
+			if(left.left == null && left.right == null) 
+				left = null;
+			else
+				left.defoliate();
+		}
+		if(right != null) {
+			if(right.left != null && right.right != null)
+				right = null;
+			else
+				right.defoliate();
 		}		
+	}
+	
 	}
 }
