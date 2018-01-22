@@ -12,15 +12,15 @@ public class TreeTest {
 		st.insert(6); // st.printInOrder();System.out.println();
 
 		System.out.println();
-		System.out.println("Height = " + st.height());
+		// System.out.println("Height = " + st.height());
 
 		st.insert(2);
 		st.insert(1); // st.printInOrder();System.out.println();
 		st.insert(4);
 		st.insert(3); // st.printInOrder();System.out.println();
 		
-		System.out.println();
-		System.out.println("Height = " + st.height());
+		// System.out.println();
+		// System.out.println("Height = " + st.height());
 
 		st.insert(5);
 		st.insert(7);
@@ -30,17 +30,27 @@ public class TreeTest {
 		st.insert(11);
 		st.insert(12);
 
-		System.out.println("Inorder...");
+	/*	System.out.println("Inorder...");
 		st.printInOrder();
 		System.out.println();
-		/* System.out.println("Preorder....");
+		System.out.println("Preorder....");
 		st.printPreOrder();
 		System.out.println();
 		System.out.println("Postorder....");
-		st.printPostOrder(); */
+		st.printPostOrder();
 
-		System.out.println();
+		System.out.println(); */
 		System.out.println("Height = " + st.height());
 		System.out.println("Size = " + st.size());
+
+		System.out.println("Root = " + st.root());
+		System.out.println("\nDefoliating...");
+		st.defoliate();
+		
+		System.out.println("Height = " + st.height());
+		System.out.println("Size = " + st.size());
+
+		st.printInOrder();
+
 	}
 }

@@ -174,10 +174,13 @@ public class SimpleTree {
 		if(node != null) {
 			size = 1 + size(node.left) + size(node.right);
 		}
-
 		return size;
 	}
 
+	public int root() {
+		return this.root.value;
+	}
+	
 	public void defoliate() { 
 		root.defoliate();
 	}
@@ -198,25 +201,27 @@ public class SimpleTree {
 			this.value = value;
 		}
 
-		public void defoliate() { 
-		if(this == null) return;		
-		if(left == null && right == null) {
-			root = null;
-			return;
+		public void defoliate() { System.out.println("VALUE = " + this.value);
+			if(this == null) { System.out.println("V = " + this.value + " return");	 return; }	
+			if(left == null && right == null) { System.out.println("V = " + this.value + " v=0");
+				value = 0;		 		 
+				return;
+			}
+			if(left != null) {
+				if(left.left == null && left.right == null) {
+					left = null; System.out.println("V = " + this.value + " left = null");
+				} else {
+					left.defoliate(); System.out.println("V = " + this.value + " left.defoliate()");
+				}
+			}
+			if(right != null) {
+				if(right.left == null && right.right == null) {
+					right = null; System.out.println("V = " + this.value + " right = null");
+				} else {
+					right.defoliate(); System.out.println("V = " + this.value + " right.defoliate()");
+				}
+			}		
 		}
-		if(left != null) {
-			if(left.left == null && left.right == null) 
-				left = null;
-			else
-				left.defoliate();
-		}
-		if(right != null) {
-			if(right.left != null && right.right != null)
-				right = null;
-			else
-				right.defoliate();
-		}		
-	}
 	
 	}
 }
