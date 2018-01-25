@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class AbstractQueue extends AbstractCollection implements Queue {
+public abstract class AbstractQueue extends AbstractCollection {
 
 	protected AbstractQueue() {}
 

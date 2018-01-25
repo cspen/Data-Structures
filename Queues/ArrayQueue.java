@@ -16,6 +16,16 @@ public class ArrayQueue extends AbstractQueue {
 		objects = new Object[capacity];
 	}
 
+	public Object peek() {
+		// Implement later
+		return new Object();
+	}
+
+	public Object element() {
+		// Implement later
+		return new Object();
+	}
+
 	public Object enqueue(Object object) {
 		if(back >= capacity) {
 			Object[] temp = objects;
@@ -31,7 +41,7 @@ public class ArrayQueue extends AbstractQueue {
 	}
 
 	public Object dequeue() {
-		if(!isEmpty())
+		if(isEmpty())
 			throw new NoSuchElementException("Queue Empty");
 		Object x = objects[front++];
 		if(2*front >= capacity) {

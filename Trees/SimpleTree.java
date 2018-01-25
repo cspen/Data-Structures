@@ -120,6 +120,27 @@ public class SimpleTree {
 	}
 
 	/**
+	 * Breadth-first (level order) traversal.
+	 */
+	public void printBreadthFirst() {
+		ArrayQueue q = new ArrayQueue();
+		q.enqueue(root);
+
+		while(q.size() > 0) {
+			Node node = (Node)q.dequeue();
+			System.out.print(node);
+			if(node.left != null) {
+				q.enqueue(node.left);
+			}
+			if(node.right != null) {
+				q.enqueue(node.right);
+			}
+			// System.out.println();
+		}
+	}
+
+
+	/**
 	 * Fetch the height of this tree.
 	 */
 	public int height() {
@@ -199,6 +220,10 @@ public class SimpleTree {
 
 		public Node(int value) {
 			this.value = value;
+		}
+
+		public String toString() {
+			return "" + value;
 		}
 
 		public void defoliate() { System.out.println("VALUE = " + this.value);
