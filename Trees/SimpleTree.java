@@ -3,7 +3,6 @@
  *
  */
 
-
 public class SimpleTree {
 
 	private Node root;
@@ -29,7 +28,6 @@ public class SimpleTree {
 
 	private void insert(Node node, int value) {
 		if(value < node.value) {
-
 			if(node.left != null) {
 				insert(node.left, value);
 			} else {
@@ -37,7 +35,6 @@ public class SimpleTree {
 			} 
 
 		} else if(value > node.value) {
-
 			if(node.right != null) {
 				insert(node.right, value);
 			} else {
@@ -124,18 +121,21 @@ public class SimpleTree {
 	 */
 	public void printBreadthFirst() {
 		ArrayQueue q = new ArrayQueue();
-		q.enqueue(root);
+		
 
+		System.out.print(root);q.enqueue(root);
 		while(q.size() > 0) {
 			Node node = (Node)q.dequeue();
-			System.out.print(node);
+			System.out.println();
+
 			if(node.left != null) {
 				q.enqueue(node.left);
-			}
+				System.out.print(node.left);
+			}			
 			if(node.right != null) {
 				q.enqueue(node.right);
+				System.out.print(node.right);
 			}
-			// System.out.println();
 		}
 	}
 

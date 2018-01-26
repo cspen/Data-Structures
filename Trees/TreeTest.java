@@ -56,7 +56,7 @@ public class TreeTest {
 		System.out.println("Height = " + st.height());
 		System.out.println("Size = " + st.size());
 */
-		st.printInOrder();
+		// st.printInOrder();
 
 	}
 }
