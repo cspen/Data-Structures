@@ -119,7 +119,7 @@ public class SimpleTree {
 	/**
 	 * Breadth-first (level order) traversal.
 	 */
-	public void printBreadthFirst() {
+	public void breadthFirst() {
 		ArrayQueue q = new ArrayQueue();
 		
 
@@ -136,6 +136,40 @@ public class SimpleTree {
 				q.enqueue(node.right);
 				System.out.print(node.right);
 			}
+		}
+	}
+
+	/**
+	 *
+	 */
+	public void printLevelOrder() {
+		ArrayQueue q1 = new ArrayQueue();
+		ArrayQueue q2 = new ArrayQueue();
+		q1.enqueue(root);
+
+		while((q1.size() > 0) || (q2.size() > 0)) { 
+			while(q1.size() > 0) { 
+				Node node = (Node)q1.dequeue();
+				if(node.left != null) {
+					q2.enqueue(node.left);
+				}
+				if(node.right != null) {
+					q2.enqueue(node.right);
+				}
+				System.out.print(node + " ");
+			}
+			System.out.println();
+			while(q2.size() > 0) {
+				Node node = (Node)q2.dequeue();
+				if(node.left != null) {
+					q1.enqueue(node.left);
+				}
+				if(node.right != null) {
+					q1.enqueue(node.right);
+				}
+				System.out.print(node + " ");
+			}
+			System.out.println();
 		}
 	}
 

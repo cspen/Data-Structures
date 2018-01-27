@@ -41,8 +41,8 @@ public class TreeTest {
 		System.out.println("Postorder....");
 		st.printPostOrder(); */
 
-		System.out.println("Level Order...");
-		st.printBreadthFirst();
+		System.out.println("Level Order...*");
+		st.printLevelOrder();
 		System.out.println();
 /*
 		System.out.println(); 
