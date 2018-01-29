@@ -49,14 +49,13 @@ public class TreeTest {
 		System.out.println("Height = " + st.height());
 		System.out.println("Size = " + st.size());
 
-		System.out.println("Root = " + st.root());
+		System.out.println("Root = " + st.root()); */
 		System.out.println("\nDefoliating...");
 		st.defoliate();
 		
 		System.out.println("Height = " + st.height());
 		System.out.println("Size = " + st.size());
-*/
-		// st.printInOrder();
+
 
 	}
 }
