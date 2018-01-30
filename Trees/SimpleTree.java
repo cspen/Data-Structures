@@ -1,5 +1,8 @@
 /**
+ * SimpleTree.java - implementation of a tree data structure with basi functionality.
  *
+ * @author Craig Spencer
+ * 
  *
  */
 
@@ -50,7 +53,7 @@ public class SimpleTree {
 	 * tree.
 	 */
 	public void delete(int value) {
-		// Algorithm not in book
+		// To do
 	}
 
 	/**
@@ -232,10 +235,16 @@ public class SimpleTree {
 		return size;
 	}
 
+	/**
+	 * Fetch the root for this tree.
+	 */
 	public int root() {
 		return this.root.value;
 	}
 	
+	/**
+	 * Remove all nodes leaving only the root.
+	 */
 	public void defoliate() { 
 		root.defoliate();
 	}
