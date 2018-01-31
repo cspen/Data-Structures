@@ -236,7 +236,7 @@ public class SimpleTree {
 	}
 
 	/**
-	 * Fetch the root for this tree.
+	 * Fetch the root value for this tree.
 	 */
 	public int root() {
 		return this.root.value;
@@ -247,6 +247,14 @@ public class SimpleTree {
 	 */
 	public void defoliate() { 
 		root.defoliate();
+	}
+
+	public int max() {
+		return root.max();
+	}
+
+	public int min() {
+		return root.min();
 	}
 
 
@@ -261,7 +269,7 @@ public class SimpleTree {
 		Node left;
 		Node right;
 
-		public Node(int value) {
+		Node(int value) {
 			this.value = value;
 		}
 
@@ -269,7 +277,7 @@ public class SimpleTree {
 			return "" + value;
 		}
 
-		public void defoliate() {
+		void defoliate() {
 			if(left != null) {
 				if(left.left == null  && left.right == null) {
 					left = null;
@@ -297,6 +305,19 @@ public class SimpleTree {
 				}
 			}		
 		}
-	
+
+		int min() { 
+        		if (this.left == null)
+				return this.value; 
+       			else
+                		return this.left.min(); 
+   		} 
+
+    		int max() { 
+        		if (this.right == null)
+				return this.value; 
+        		else
+		        	return this.right.max(); 
+    		}	
 	}
 }
