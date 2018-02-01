@@ -18,6 +18,14 @@ public class SimpleTree {
 	}
 
 	/**
+	 * Create a SimpleTree from a sorted
+	 * integer array.
+	 */
+	public SimpleTree(int[] a) {
+		// TO DO
+	}
+
+	/**
 	 * Insert the specified value
 	 * into this tree.
 	 */
@@ -249,10 +257,16 @@ public class SimpleTree {
 		root.defoliate();
 	}
 
+	/**
+	 * Fetch the greatest value in this tree.
+	 */
 	public int max() {
 		return root.max();
 	}
 
+	/**
+	 * Fetch the smallest value in this tree.
+	 */
 	public int min() {
 		return root.min();
 	}
