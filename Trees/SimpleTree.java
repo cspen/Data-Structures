@@ -22,8 +22,21 @@ public class SimpleTree {
 	 * integer array.
 	 */
 	public SimpleTree(int[] a) {
-		// TO DO
+		if(a.length == 0)
+			return;
+
+		root = buildTree(a);		
 	}
+
+	private Node buildTree(int[] a) {
+		if(i < 0 || i > a.length) 
+			return;
+		Node root = a[a.length/2];
+		root.lefth = buildTree();
+		root.right = buildTree();
+	}
+
+		
 
 	/**
 	 * Insert the specified value
