@@ -5,6 +5,7 @@
  * 
  *
  */
+import java.util.*;
 
 public class SimpleTree {
 
@@ -20,20 +21,24 @@ public class SimpleTree {
 	/**
 	 * Create a SimpleTree from a sorted
 	 * integer array.
+	 *
+	 * My Google interviewer asked the following question:
+	 * Given a sorted integer array, write a method that
+	 * converts it into a binary serach tree.
 	 */
 	public SimpleTree(int[] a) {
 		if(a.length == 0)
 			return;
 
-		root = buildTree(a);		
+		buildTree(a, root);		
 	}
 
-	private Node buildTree(int[] a) {
-		if(i < 0 || i > a.length) 
+	private void buildTree(int[] a, Node n) {
+		if(a.length == 0)
 			return;
-		Node root = a[a.length/2];
-		root.lefth = buildTree();
-		root.right = buildTree();
+		n = new Node(a[a.length/2]);
+		buildTree(Arrays.copyOfRange(a, 0, a.length/2), n.left);
+		buildTree(Arrays.copyOfRange(a, a.length/2, a.length), n.right);
 	}
 
 		
