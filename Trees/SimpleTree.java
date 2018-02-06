@@ -33,12 +33,17 @@ public class SimpleTree {
 		buildTree(a, root);		
 	}
 
-	private void buildTree(int[] a, Node n) {
-		if(a.length == 0)
+	private void buildTree(int[] a, Node n) {System.out.println(a.length);
+		if(a.length <= 0)
 			return;
-		n = new Node(a[a.length/2]);
-		buildTree(Arrays.copyOfRange(a, 0, a.length/2), n.left);
-		buildTree(Arrays.copyOfRange(a, a.length/2, a.length), n.right);
+
+		if(a.length == 1) {
+			n = new Node(a[0]);
+		} else {
+			n = new Node(a[a.length/2]);
+			buildTree(Arrays.copyOfRange(a, 0, a.length/2), n.left);
+			buildTree(Arrays.copyOfRange(a, a.length/2, a.length), n.right);
+		}
 	}
 
 		

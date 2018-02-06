@@ -27,11 +27,14 @@ public class TreeTest {
 
 
 
-		/*
-		st.insert(6); // st.printInOrder();System.out.println();
+		
+		// st.insert(6);
+		st.printInOrder();System.out.println();
 
 		System.out.println();
 		System.out.println("Height = " + st.height());
+
+		/*
 
 		st.insert(2);
 		st.insert(1); st.printInOrder();System.out.println();
