@@ -30,20 +30,22 @@ public class SimpleTree {
 		if(a.length == 0)
 			return;
 
-		buildTree(a, root);		
+		root = buildTree(a);		
 	}
 
-	private void buildTree(int[] a, Node n) {System.out.println(a.length);
-		if(a.length <= 0)
-			return;
+	private Node buildTree(int[] a) {
+		if(a.length < 0)
+			return null;
 
 		if(a.length == 1) {
-			n = new Node(a[0]);
+			return new Node(a[0]);
 		} else {
-			n = new Node(a[a.length/2]);
-			buildTree(Arrays.copyOfRange(a, 0, a.length/2), n.left);
-			buildTree(Arrays.copyOfRange(a, a.length/2, a.length), n.right);
+			Node n = new Node(a[a.length/2]);
+			n.left = buildTree(Arrays.copyOfRange(a, 0, a.length/2));
+			n.right = buildTree(Arrays.copyOfRange(a, a.length/2, a.length));
+			return n;
 		}
+		// return null;
 	}
 
 		
