@@ -12,21 +12,6 @@ public class TreeTest {
 		SimpleTree st = new SimpleTree(a);
 		System.out.println("Tree created...");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		
 		// st.insert(6);
 		st.printInOrder();System.out.println();
@@ -59,12 +44,14 @@ public class TreeTest {
 		st.printPreOrder();
 		System.out.println();
 		System.out.println("Postorder....");
-		st.printPostOrder();
+		st.printPostOrder(); */
 
+		
 		System.out.println("Level Order...*");
 		st.printLevelOrder();
 		System.out.println();
 
+		/*
 		System.out.println(); 
 		System.out.println("Height = " + st.height());
 		System.out.println("Size = " + st.size());

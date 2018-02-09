@@ -34,18 +34,18 @@ public class SimpleTree {
 	}
 
 	private Node buildTree(int[] a) {
-		if(a.length < 0)
+		if(a.length <= 0)
 			return null;
 
 		if(a.length == 1) {
 			return new Node(a[0]);
 		} else {
-			Node n = new Node(a[a.length/2]);
-			n.left = buildTree(Arrays.copyOfRange(a, 0, a.length/2));
-			n.right = buildTree(Arrays.copyOfRange(a, a.length/2, a.length));
+			int i = (int)(a.length/2);
+			Node n = new Node(a[i]);
+			n.left = buildTree(Arrays.copyOfRange(a, 0, i));
+			n.right = buildTree(Arrays.copyOfRange(a, i+1, a.length));
 			return n;
 		}
-		// return null;
 	}
 
 		
