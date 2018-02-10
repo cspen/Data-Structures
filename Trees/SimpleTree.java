@@ -48,8 +48,6 @@ public class SimpleTree {
 		}
 	}
 
-		
-
 	/**
 	 * Insert the specified value
 	 * into this tree.
@@ -294,6 +292,15 @@ public class SimpleTree {
 	 */
 	public int min() {
 		return root.min();
+	}
+
+	public void reflect() {
+		if(this == null) return;
+		if(left != null) left.reflect();
+		if(right != null) right.reflect();
+		BinaryTree temp = left;
+		left = right;
+		right = temp;
 	}
 
 
