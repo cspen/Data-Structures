@@ -294,15 +294,12 @@ public class SimpleTree {
 		return root.min();
 	}
 
+	/**
+	 * Horizontally reverse this SimpleTree.
+	 */
 	public void reflect() {
-		if(this == null) return;
-		if(left != null) left.reflect();
-		if(right != null) right.reflect();
-		BinaryTree temp = left;
-		left = right;
-		right = temp;
+		root.reflect();
 	}
-
 
 /////////////////////////////// Inner class definition
 
@@ -364,6 +361,15 @@ public class SimpleTree {
 				return this.value; 
         		else
 		        	return this.right.max(); 
-    		}	
+    		}
+
+		public void reflect() {
+			if(this == null) return;
+			if(left != null) left.reflect();
+			if(right != null) right.reflect();
+			Node temp = left;
+			left = right;
+			right = temp;
+		}
 	}
 }

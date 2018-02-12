@@ -51,6 +51,12 @@ public class TreeTest {
 		st.printLevelOrder();
 		System.out.println();
 
+		st.reflect();
+		System.out.println("Reflecting...*");
+		st.printLevelOrder();
+		System.out.println();
+		
+
 		/*
 		System.out.println(); 
 		System.out.println("Height = " + st.height());
