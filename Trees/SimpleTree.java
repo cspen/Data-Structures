@@ -371,5 +371,13 @@ public class SimpleTree {
 			left = right;
 			right = temp;
 		}
+
+		public int level(int i) {
+			if(this == null) return -1;
+			if(i == root.value) return 0;
+			int leftLevel = (left == null? -1: left.level(i));
+			int rightLevel = (right == null? -1: right.level(i));
+			return 1 + (leftLevel < rightLevel? rightLevel:leftLevel);
+		}
 	}
 }
