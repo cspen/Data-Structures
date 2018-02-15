@@ -44,7 +44,8 @@ public class TreeTest {
 		st.printPreOrder();
 		System.out.println();
 		System.out.println("Postorder....");
-		st.printPostOrder(); */
+		st.printPostOrder();
+		 */
 
 		
 		System.out.println("Level Order...*");
@@ -55,6 +56,10 @@ public class TreeTest {
 		System.out.println("Reflecting...*");
 		st.printLevelOrder();
 		System.out.println();
+
+		
+		System.out.println("Leveling...");
+		System.out.println(st.level(6));
 		
 
 		/*

@@ -301,6 +301,13 @@ public class SimpleTree {
 		root.reflect();
 	}
 
+	/**
+	 * Fetch the level of the specified value.
+	 */
+	public int level(int n) {
+		return root.level(n);
+	}
+
 /////////////////////////////// Inner class definition
 
 	/**
@@ -374,7 +381,7 @@ public class SimpleTree {
 
 		public int level(int i) {
 			if(this == null) return -1;
-			if(i == root.value) return 0;
+			if(i == this.value) return 0;
 			int leftLevel = (left == null? -1: left.level(i));
 			int rightLevel = (right == null? -1: right.level(i));
 			return 1 + (leftLevel < rightLevel? rightLevel:leftLevel);
