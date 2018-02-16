@@ -59,7 +59,7 @@ public class TreeTest {
 
 		
 		System.out.println("Leveling...");
-		System.out.println(st.level(6));
+		System.out.println(st.level(1));
 		
 
 		/*
