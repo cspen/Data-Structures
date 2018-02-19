@@ -379,14 +379,34 @@ public class SimpleTree {
 			right = temp;
 		}
 
-		public int level(int i) { System.out.println(this.value);
+		public int level(int i) {  // System.out.println("* " + this.value);
 			if(i == this.value) return 0;
-			
-			int leftV = this.right == null ? -1 : return 1 + this.right.level(i);
-			int rigtV = this.left == null ? -1 : return 1 + this.left.level(i);
-			
-				
-			
+
+			int leftHeight;
+			int rightHeight;
+
+			// Get left height
+			if(this.left == null)
+				leftHeight = -1;
+			else
+				leftHeight = this.left.level(i);
+
+
+			// Get right height
+			if(this.right == null)
+				rightHeight = -1;
+			else
+				rightHeight = this.right.level(i);
+
+			// Determine which is higher - left or right
+			System.out.println("leftH = " + leftHeight + " rightH = " + rightHeight + " value = " + this.value);
+			int result;
+			if(leftHeight < rightHeight) 
+				result =  1 + leftHeight;
+			else
+				result = 1 + rightHeight;
+
+			return result;			
 		}
 	}
 }
