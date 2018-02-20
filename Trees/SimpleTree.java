@@ -305,7 +305,42 @@ public class SimpleTree {
 	 * Fetch the level of the specified value.
 	 */
 	public int level(int n) {
-		return root.level(n);
+		// if(i == this.value) return 0;
+
+		ArrayQueue q1 = new ArrayQueue();
+		ArrayQueue q2 = new ArrayQueue();
+		q1.enqueue(root);
+		int level = 0;
+
+		while((q1.size() > 0) || (q2.size() > 0)) { 
+			while(q1.size() > 0) { 
+				Node node = (Node)q1.dequeue();
+				if(node.value == i) {
+					return level;					
+				}
+				if(node.left != null) {
+					q2.enqueue(node.left);
+				}
+				if(node.right != null) {
+					q2.enqueue(node.right);
+				}
+				
+			}
+			level++;
+			while(q2.size() > 0) {
+				Node node = (Node)q2.dequeue();
+				if(node.value == i) {
+					return level;
+				}
+				if(node.left != null) {
+					q1.enqueue(node.left);
+				}
+				if(node.right != null) {
+					q1.enqueue(node.right);
+				}
+			}
+			level++;
+		}	
 	}
 
 /////////////////////////////// Inner class definition
@@ -379,34 +414,6 @@ public class SimpleTree {
 			right = temp;
 		}
 
-		public int level(int i) {  // System.out.println("* " + this.value);
-			if(i == this.value) return 0;
-
-			int leftHeight;
-			int rightHeight;
-
-			// Get left height
-			if(this.left == null)
-				leftHeight = -1;
-			else
-				leftHeight = this.left.level(i);
-
-
-			// Get right height
-			if(this.right == null)
-				rightHeight = -1;
-			else
-				rightHeight = this.right.level(i);
-
-			// Determine which is higher - left or right
-			System.out.println("leftH = " + leftHeight + " rightH = " + rightHeight + " value = " + this.value);
-			int result;
-			if(leftHeight < rightHeight) 
-				result =  1 + leftHeight;
-			else
-				result = 1 + rightHeight;
-
-			return result;			
-		}
+		
 	}
 }
