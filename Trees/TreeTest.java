@@ -59,7 +59,7 @@ public class TreeTest {
 
 		
 		System.out.println("Leveling...");
-		int level = 8;
+		int level = 4;
 		System.out.println("Level = " + level);
 		System.out.println(st.level(level));
 		

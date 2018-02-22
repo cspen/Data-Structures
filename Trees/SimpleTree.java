@@ -305,8 +305,6 @@ public class SimpleTree {
 	 * Fetch the level of the specified value.
 	 */
 	public int level(int n) {
-		// if(i == this.value) return 0;
-
 		ArrayQueue q1 = new ArrayQueue();
 		ArrayQueue q2 = new ArrayQueue();
 		q1.enqueue(root);
@@ -315,7 +313,7 @@ public class SimpleTree {
 		while((q1.size() > 0) || (q2.size() > 0)) { 
 			while(q1.size() > 0) { 
 				Node node = (Node)q1.dequeue();
-				if(node.value == i) {
+				if(node.value == n) {
 					return level;					
 				}
 				if(node.left != null) {
@@ -329,7 +327,7 @@ public class SimpleTree {
 			level++;
 			while(q2.size() > 0) {
 				Node node = (Node)q2.dequeue();
-				if(node.value == i) {
+				if(node.value == n) {
 					return level;
 				}
 				if(node.left != null) {
@@ -340,7 +338,8 @@ public class SimpleTree {
 				}
 			}
 			level++;
-		}	
+		}
+		return -1;
 	}
 
 /////////////////////////////// Inner class definition
