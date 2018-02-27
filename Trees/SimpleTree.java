@@ -342,6 +342,10 @@ public class SimpleTree {
 		return -1;
 	}
 
+	public int leaves() {
+		return root.leaves();
+	}
+
 /////////////////////////////// Inner class definition
 
 	/**
@@ -411,6 +415,14 @@ public class SimpleTree {
 			Node temp = left;
 			left = right;
 			right = temp;
+		}
+
+		public int leaves() {
+			if(this == null) return 0;
+			if(left == null && right == null) return 1;
+			int leftLeaves = (left == null? 0: left.leaves());
+			int rightLeaves = (right == null? 0: right.leaves());
+			return leftLeaves + rightLeaves;
 		}
 
 		
