@@ -346,6 +346,10 @@ public class SimpleTree {
 		return root.leaves();
 	}
 
+	public boolean isBST() {
+		return false;
+	}
+
 /////////////////////////////// Inner class definition
 
 	/**
