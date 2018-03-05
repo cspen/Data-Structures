@@ -347,7 +347,7 @@ public class SimpleTree {
 	}
 
 	public boolean isBST() {
-		return false;
+		return root.isBST();
 	}
 
 /////////////////////////////// Inner class definition
@@ -429,6 +429,19 @@ public class SimpleTree {
 			return leftLeaves + rightLeaves;
 		}
 
-		
+		public boolean isBST() {
+			if(this == null) return true;
+			if(left == null && right == null) return true;
+			if(this.value < left.value) {
+				return false;
+			} else {
+				return left.isBST();
+			}
+			if(this.value > right.value) {
+				 return false;
+			} else {
+				return right.isBST();
+			}
+		}		
 	}
 }
