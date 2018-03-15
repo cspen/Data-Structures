@@ -19,7 +19,7 @@ public class TreeTest {
 		System.out.println();
 		System.out.println("Height = " + st.height());
 
-		/*
+		/**
 
 		st.insert(2);
 		st.insert(1); st.printInOrder();System.out.println();
@@ -29,13 +29,13 @@ public class TreeTest {
 		System.out.println();
 		System.out.println("Height = " + st.height());
 
-		st.insert(5);
+		 st.insert(5);
 		st.insert(7);
 		st.insert(9);
 		st.insert(8);
 		st.insert(10);
 		st.insert(11);
-		st.insert(12);
+		st.insert(12); 
 
 		System.out.println("Inorder...");
 		st.printInOrder();
@@ -52,10 +52,10 @@ public class TreeTest {
 		st.printLevelOrder();
 		System.out.println();
 
-		st.reflect();
+		/* st.reflect();
 		System.out.println("Reflecting...*");
 		st.printLevelOrder();
-		System.out.println();
+		System.out.println(); */
 
 		
 		System.out.println("Leveling...");
@@ -65,6 +65,9 @@ public class TreeTest {
 
 		System.out.println("Leaves..");
 		System.out.println("Number of Leaves: " + st.leaves());
+
+		System.out.println("is BST?");
+		System.out.println(st.isBST());
 		
 
 		/*

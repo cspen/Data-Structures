@@ -432,16 +432,10 @@ public class SimpleTree {
 		public boolean isBST() {
 			if(this == null) return true;
 			if(left == null && right == null) return true;
-			if(this.value < left.value) {
+			if(this.value < left.value || right.value > this.value) {
 				return false;
-			} else {
-				return left.isBST();
-			}
-			if(this.value > right.value) {
-				 return false;
-			} else {
-				return right.isBST();
-			}
+			} 
+			return left.isBST() && right.isBST();			
 		}		
 	}
 }
