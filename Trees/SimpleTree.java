@@ -347,8 +347,16 @@ public class SimpleTree {
 	}
 
 	public boolean isBST() {
-		return root.isBST();
-	}
+        	return isBST(root, null, null);
+    	}
+
+	private boolean isBST(Node x, int min, int max) {
+        	if (x == null) return true;
+        	if (min != null && x.value < min) return false;
+        	if (max != null && x.value > max) return false;
+
+        	return isBST(x.left, min, x.value) && isBST(x.right, x.value, max);
+    	} 
 
 /////////////////////////////// Inner class definition
 
@@ -428,14 +436,6 @@ public class SimpleTree {
 			int rightLeaves = (right == null? 0: right.leaves());
 			return leftLeaves + rightLeaves;
 		}
-
-		public boolean isBST() {
-			if(this == null) return true;
-			if(left == null && right == null) return true;
-			if(this.value < left.value || right.value > this.value) {
-				return false;
-			} 
-			return left.isBST() && right.isBST();			
-		}		
+		
 	}
 }
