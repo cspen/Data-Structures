@@ -19,7 +19,7 @@ public class TreeTest {
 		System.out.println();
 		System.out.println("Height = " + st.height());
 
-		/**
+		
 
 		st.insert(2);
 		st.insert(1); st.printInOrder();System.out.println();
@@ -45,7 +45,7 @@ public class TreeTest {
 		System.out.println();
 		System.out.println("Postorder....");
 		st.printPostOrder();
-		 */
+		 
 
 		
 		System.out.println("Level Order...*");

@@ -347,13 +347,13 @@ public class SimpleTree {
 	}
 
 	public boolean isBST() {
-        	return isBST(root, null, null);
+        	return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     	}
 
 	private boolean isBST(Node x, int min, int max) {
         	if (x == null) return true;
-        	if (min != null && x.value < min) return false;
-        	if (max != null && x.value > max) return false;
+        	if (x.value < min) return false;
+        	if (x.value > max) return false;
 
         	return isBST(x.left, min, x.value) && isBST(x.right, x.value, max);
     	} 
