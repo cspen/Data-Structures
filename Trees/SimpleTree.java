@@ -88,6 +88,22 @@ public class SimpleTree {
 	}
 
 	/**
+	 *
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj) return true;
+		if(!(obj instanceof SimpleTree)) return false;
+		SimpleTree tree = (BinaryTree)object;
+		return (tree.root.equals(root) ||
+			tree.left.equals(left) ||
+			tree.right.equals(right) ||
+			tree.parent.equals(parent) ||
+			tree.size() == size);
+		// Need to implement size function and value
+	}
+
+	/**
 	 * Print the tree node values
 	 * in preorder traversal.
 	 */
