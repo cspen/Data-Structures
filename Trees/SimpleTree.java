@@ -100,7 +100,6 @@ public class SimpleTree {
 			tree.right.equals(right) ||
 			tree.parent.equals(parent) ||
 			tree.size() == size);
-		// Need to implement size function and value
 	}
 
 	/**
