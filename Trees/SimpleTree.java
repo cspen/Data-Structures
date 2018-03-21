@@ -92,14 +92,13 @@ public class SimpleTree {
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if(this == obj) return true;
-		if(!(obj instanceof SimpleTree)) return false;
-		SimpleTree tree = (BinaryTree)object;
-		return (tree.root.equals(root) ||
-			tree.left.equals(left) ||
-			tree.right.equals(right) ||
-			tree.parent.equals(parent) ||
-			tree.size() == size);
+		if(obj == null && root == null) {
+			return true;
+		} else if(obj == null || root == null) {
+			return false;
+		}
+
+		return root.equals(obj);
 	}
 
 	/**
@@ -451,6 +450,16 @@ public class SimpleTree {
 			int rightLeaves = (right == null? 0: right.leaves());
 			return leftLeaves + rightLeaves;
 		}
-		
+
+		public boolean equals(Object obj) {
+			if(this == null && obj == null) return true;
+			if(this == obj) return true;
+			if(!(obj instanceof SimpleTree)) return false;
+			SimpleTree tree = (SimpleTree)obj;
+			return (root.equals(root) ||
+				left.equals(left) ||
+				right.equals(right) ||
+				tree.size() == size());
+		}		
 	}
 }
