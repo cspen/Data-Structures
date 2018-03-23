@@ -456,9 +456,9 @@ public class SimpleTree {
 			if(this == obj) return true;
 			if(!(obj instanceof SimpleTree)) return false;
 			SimpleTree tree = (SimpleTree)obj;
-			return (root.equals(root) ||
-				left.equals(left) ||
-				right.equals(right) ||
+			return (root.equals(tree.root) ||			// Tricky
+				left.equals(tree.root.left) ||
+				right.equals(tree.root.right) ||
 				tree.size() == size());
 		}		
 	}
