@@ -88,20 +88,6 @@ public class SimpleTree {
 	}
 
 	/**
-	 *
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if(obj == null && root == null) {
-			return true;
-		} else if(obj == null || root == null) {
-			return false;
-		}
-
-		return root.equals(obj);
-	}
-
-	/**
 	 * Print the tree node values
 	 * in preorder traversal.
 	 */
@@ -372,6 +358,21 @@ public class SimpleTree {
         	return isBST(x.left, min, x.value) && isBST(x.right, x.value, max);
     	} 
 
+	/**
+	 *
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null && root == null) {
+			return true;
+		} else if(obj == null || root == null) {
+			return false;
+		}
+
+		SimpleTree tree = (SimpleTree)obj;
+		return root.equals(tree.root);
+	}
+
 /////////////////////////////// Inner class definition
 
 	/**
@@ -451,15 +452,21 @@ public class SimpleTree {
 			return leftLeaves + rightLeaves;
 		}
 
-		public boolean equals(Object obj) {
-			if(this == null && obj == null) return true;
-			if(this == obj) return true;
-			if(!(obj instanceof SimpleTree)) return false;
-			SimpleTree tree = (SimpleTree)obj;
-			return (root.equals(tree.root) ||			// Tricky
-				left.equals(tree.root.left) ||
-				right.equals(tree.root.right) ||
-				tree.size() == size());
+		public boolean equals(Node node) {	
+
+			boolean rn = (this.value == node.value ? true:false);
+			boolean ln = false;
+			boolean rin = false;			
+
+			if(left != null) {
+				ln = left.equals(node.left);
+			}
+			if(right != null) {
+				 rin = right.equals(node.right);
+			}
+			return rn || ln || rin;
+
+			
 		}		
 	}
 }
