@@ -370,8 +370,21 @@ public class SimpleTree {
 		}
 
 		SimpleTree tree = (SimpleTree)obj;
-		return root.equals(tree.root);
+		return equals(tree.root, root);
 	}
+
+
+	public boolean equals(Node a, Node b) {
+		if (a == null && b == null)
+       			return true;
+             
+       		if (a != null && b != null) 
+        		return (a.value == b.value && equals(a.left, b.left)
+               			&& equals(a.right, b.right));
+  
+        	return false;
+	}	
+	
 
 /////////////////////////////// Inner class definition
 
@@ -452,21 +465,6 @@ public class SimpleTree {
 			return leftLeaves + rightLeaves;
 		}
 
-		public boolean equals(Node node) {	
-
-			boolean rn = (this.value == node.value ? true:false);
-			boolean ln = false;
-			boolean rin = false;			
-
-			if(left != null) {
-				ln = left.equals(node.left);
-			}
-			if(right != null) {
-				 rin = right.equals(node.right);
-			}
-			return rn || ln || rin;
-
 			
-		}		
 	}
 }
