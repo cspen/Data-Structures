@@ -85,6 +85,8 @@ public class SimpleTree {
 	 */
 	public void delete(int value) {
 		// To do
+
+		// Need algorithm
 	}
 
 	/**
@@ -383,7 +385,15 @@ public class SimpleTree {
                			&& equals(a.right, b.right));
   
         	return false;
-	}	
+	}
+
+	/**
+	 * Combine this SimpleTree with the 
+	 * specified SimpleTree.
+	 */
+	public void merge(SimpleTree s) {
+
+	}
 	
 
 /////////////////////////////// Inner class definition
