@@ -1,5 +1,8 @@
 /**
- * SimpleTree.java - implementation of a tree data structure with basi functionality.
+ * SimpleTree.java - implementation of a tree data structure with basic functionality.
+ * 
+ * After working out the methods I will make a node based version instead of the
+ * encapsulated version here.
  *
  * @author Craig Spencer
  * 
@@ -392,7 +395,16 @@ public class SimpleTree {
 	 * specified SimpleTree.
 	 */
 	public void merge(SimpleTree s) {
+		if(s == null) return;
 
+		// Need to work out an algorithm
+		// First case - trees are same size
+		// Second case - trees are different sizes
+
+		// One idea is to do a level order traversal of
+		// each tree placing each element into an array
+		// then sort the array and passing it to 
+		// the SimpleTree(intP[]) constructore.
 	}
 	
 
