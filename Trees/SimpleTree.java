@@ -1,8 +1,8 @@
 /**
  * SimpleTree.java - implementation of a tree data structure with basic functionality.
  * 
- * After working out the methods I will make a node based version instead of the
- * encapsulated version here.
+ * This is an encapsulated version of a tree. After I work out all the logic for this
+ * tree I need to build a node based tree.
  *
  * @author Craig Spencer
  * 
@@ -34,6 +34,10 @@ public class SimpleTree {
 			return;
 
 		root = buildTree(a);		
+	}
+
+	public SimpleTree.Node getRoot() {
+		return this.root;
 	}
 
 	private Node buildTree(int[] a) {
@@ -395,16 +399,19 @@ public class SimpleTree {
 	 * specified SimpleTree.
 	 */
 	public void merge(SimpleTree s) {
-		if(s == null) return;
+		if (s == null)
+            		return;
+        	if (this.root == null) {
+			this.root = s.root;
+            		return;
+		}
 
-		// Need to work out an algorithm
-		// First case - trees are same size
-		// Second case - trees are different sizes
-
-		// One idea is to do a level order traversal of
-		// each tree placing each element into an array
-		// then sort the array and passing it to 
-		// the SimpleTree(intP[]) constructore.
+		/* Recursive algorithm
+        	t1.val += t2.val;
+        	t1.left = mergeTrees(t1.left, t2.left);
+       		t1.right = mergeTrees(t1.right, t2.right);
+        	return t1;
+		*/
 	}
 	
 
