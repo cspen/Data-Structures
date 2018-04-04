@@ -398,20 +398,15 @@ public class SimpleTree {
 	 * Combine this SimpleTree with the 
 	 * specified SimpleTree.
 	 */
-	public void merge(SimpleTree s) {
-		if (s == null)
-            		return;
-        	if (this.root == null) {
-			this.root = s.root;
-            		return;
+	public SimpleTree.Node merge(SimpleTree s) {
+		if(s == null) {
+			return this.root;
 		}
-
-		/* Recursive algorithm
-        	t1.val += t2.val;
-        	t1.left = mergeTrees(t1.left, t2.left);
-       		t1.right = mergeTrees(t1.right, t2.right);
-        	return t1;
-		*/
+		if(this.root == null) {
+			this.root = s.getRoot();
+			return;
+		}
+		return root.merge(
 	}
 	
 
@@ -494,6 +489,23 @@ public class SimpleTree {
 			return leftLeaves + rightLeaves;
 		}
 
+		public static SimpleTree.Node merge(SimpleTree.Node n1, SimpleTree.Node n2) {
+			if (s == null)
+            			return;
+        		if (this.root == null) {
+				this.root = s.getRoot();
+            			return;
+			}
+
+			n1.val += n2.val;
+        		n1.left = mergeTrees(n1.left, n2.left);
+       			n1.right = mergeTrees(n1.right, n2.right);
+        		return n1;
+
+			// Just a note - Github kind of sucks.
+			// If you make a mistake on a commit comment there
+			// appears to be no way to correct it.
+		}
 			
 	}
 }
