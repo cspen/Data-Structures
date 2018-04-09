@@ -2,7 +2,7 @@
  * SimpleTree.java - implementation of a tree data structure with basic functionality.
  * 
  * This is an encapsulated version of a tree. After I work out all the logic for this
- * tree I need to build a node based tree.
+ * tree I am going to build a node based tree.
  *
  * @author Craig Spencer
  * 
@@ -404,9 +404,9 @@ public class SimpleTree {
 		}
 		if(this.root == null) {
 			this.root = s.getRoot();
-			return;
+			return this.root;
 		}
-		return root.merge(
+		return root.merge(this.root, s.getRoot());
 	}
 	
 
@@ -489,17 +489,23 @@ public class SimpleTree {
 			return leftLeaves + rightLeaves;
 		}
 
-		public static SimpleTree.Node merge(SimpleTree.Node n1, SimpleTree.Node n2) {
+		public SimpleTree.Node merge(SimpleTree.Node n1, SimpleTree.Node n2) {
+			/*
 			if (s == null)
             			return;
         		if (this.root == null) {
 				this.root = s.getRoot();
             			return;
 			}
+			*/
 
-			n1.val += n2.val;
-        		n1.left = mergeTrees(n1.left, n2.left);
-       			n1.right = mergeTrees(n1.right, n2.right);
+			// I'm following an algorithm I found online but this next line is not what
+			// I thought of merging a tree. I thought a merge would combine
+			// the two by adding the values of one tree to the other as new nodes without creating
+			// duplicates. I need to find out the true definition of merging trees.
+			n1.value += n2.value;
+        		n1.left = merge(n1.left, n2.left);
+       			n1.right = merge(n1.right, n2.right);
         		return n1;
 
 			// Just a note - Github kind of sucks.
