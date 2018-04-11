@@ -503,14 +503,15 @@ public class SimpleTree {
 			// I thought of merging a tree. I thought a merge would combine
 			// the two by adding the values of one tree to the other as new nodes without creating
 			// duplicates. I need to find out the true definition of merging trees.
-			n1.value += n2.value;
-        		n1.left = merge(n1.left, n2.left);
-       			n1.right = merge(n1.right, n2.right);
+			if(n1 != null && n2 != null) {
+				n1.value += n2.value;
+        			n1.left = merge(n1.left, n2.left);
+       				n1.right = merge(n1.right, n2.right);
+			} else {
+				if(n1 == null) return n2;
+				else return n1;
+			}
         		return n1;
-
-			// Just a note - Github kind of sucks.
-			// If you make a mistake on a commit comment there
-			// appears to be no way to correct it.
 		}
 			
 	}

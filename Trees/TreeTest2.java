@@ -21,12 +21,16 @@ public class TreeTest2 {
 
 
 		/* Test merge method */
-		System.out.println("Level Order...*");
+		System.out.println("Level Order...First Tree*");
 		st1.printLevelOrder();
+		System.out.println("\nLevel Order...Second Tree*");
+		st2.printLevelOrder();
 
+
+		System.out.println("\nMerging...");
 		st1.merge(st2);
 
-		System.out.println("Level Order...*");
+		System.out.println("\nLevel Order...*");
 		st1.printLevelOrder();
 
 
