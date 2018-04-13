@@ -7,12 +7,14 @@ public class TreeTest2 {
 		SimpleTree st2 = new SimpleTree();
 
 		st1.insert(5);
-		st1.insert(4);
-		st1.insert(6);
+		/* st1.insert(4);
+		st1.insert(3);
+		st1.insert(9);
+		st1.insert(0); */
 
 		st2.insert(5);
-		st2.insert(4);
-		st2.insert(3);
+		/* st2.insert(4);
+		st2.insert(7); */
 
 		/* Testing equals method
 		System.out.println(st1.equals(st2));

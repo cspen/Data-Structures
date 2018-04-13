@@ -490,19 +490,11 @@ public class SimpleTree {
 		}
 
 		public SimpleTree.Node merge(SimpleTree.Node n1, SimpleTree.Node n2) {
-			/*
-			if (s == null)
-            			return;
-        		if (this.root == null) {
-				this.root = s.getRoot();
-            			return;
-			}
-			*/
-
 			// I'm following an algorithm I found online but this next line is not what
 			// I thought of merging a tree. I thought a merge would combine
 			// the two by adding the values of one tree to the other as new nodes without creating
 			// duplicates. I need to find out the true definition of merging trees.
+
 			if(n1 != null && n2 != null) {
 				n1.value += n2.value;
         			n1.left = merge(n1.left, n2.left);
