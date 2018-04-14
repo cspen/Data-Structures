@@ -91,9 +91,29 @@ public class SimpleTree {
 	 * tree.
 	 */
 	public void delete(int value) {
-		// To do
+		if(root == null)
+			return;
 
-		// Need algorithm
+		// Algorithm
+		// Find node - if it exists
+		Node node = findNode(root, value);
+		if(node == null) return;
+		
+		// Three cases:
+		//	Node has no children
+		//	Node has one child
+		// 	Node has two children
+
+	}
+
+	// Helper function for remove function
+	private Node findNode(Node n, int value) {
+		if(n.value == value)
+			return n;
+		Node ln = findNode(n.left, value);
+		Node rn = findNode(n.right, value);
+
+		return (ln == null ? rn : ln);
 	}
 
 	/**
