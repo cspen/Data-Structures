@@ -4,16 +4,16 @@ public class TreeTest2 {
 
 		
 		SimpleTree st1 = new SimpleTree();
-		SimpleTree st2 = new SimpleTree();
+		// SimpleTree st2 = new SimpleTree();
 
 		st1.insert(5);
-		/* st1.insert(4);
+		st1.insert(4);
 		st1.insert(3);
 		st1.insert(9);
-		st1.insert(0); */
+		st1.insert(0); 
 
-		st2.insert(5);
-		/* st2.insert(4);
+		/* st2.insert(5);
+		st2.insert(4);
 		st2.insert(7); */
 
 		/* Testing equals method
@@ -21,8 +21,7 @@ public class TreeTest2 {
 		System.out.println(st2.equals(st1));
 		*/
 
-
-		/* Test merge method */
+		/* Test merge method 
 		System.out.println("Level Order...First Tree*");
 		st1.printLevelOrder();
 		System.out.println("\nLevel Order...Second Tree*");
@@ -34,6 +33,12 @@ public class TreeTest2 {
 
 		System.out.println("\nLevel Order...*");
 		st1.printLevelOrder();
+		*/
+
+		/* Test find method */
+		SimpleTree.Node node = st1.find(st1.getRoot(), 10);
+		System.out.println("Node = " + node);
+
 
 
 	}

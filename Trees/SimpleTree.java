@@ -40,7 +40,7 @@ public class SimpleTree {
 		return this.root;
 	}
 
-	private Node buildTree(int[] a) {
+	private SimpleTree.Node buildTree(int[] a) {
 		if(a.length <= 0)
 			return null;
 
@@ -96,7 +96,7 @@ public class SimpleTree {
 
 		// Algorithm
 		// Find node - if it exists
-		Node node = findNode(root, value);
+		Node node = find(root, value);
 		if(node == null) return;
 		
 		// Three cases:
@@ -107,13 +107,15 @@ public class SimpleTree {
 	}
 
 	// Helper function for remove function
-	private Node findNode(Node n, int value) {
+	public SimpleTree.Node find(Node n, int value) {
+		if(n == null) return null;
 		if(n.value == value)
 			return n;
-		Node ln = findNode(n.left, value);
-		Node rn = findNode(n.right, value);
+		SimpleTree.Node ln = find(n.left, value);
+		SimpleTree.Node rn = find(n.right, value);
 
 		return (ln == null ? rn : ln);
+		
 	}
 
 	/**
@@ -435,7 +437,7 @@ public class SimpleTree {
 	/**
 	 * The node of a tree.
 	 */
-	private class Node {
+	class Node {
 
 		int value;
 		Node left;
