@@ -96,17 +96,25 @@ public class SimpleTree {
 
 		// Algorithm
 		// Find node - if it exists
-		Node node = find(root, value);
+		SimpleTree.Node node = find(root, value);
 		if(node == null) return;
 		
-		// Three cases:
 		//	Node has no children
+		if(node.left == null && node.right == null)
+			root.remove(node);
+
 		//	Node has one child
 		// 	Node has two children
 
 	}
 
-	// Helper function for remove function
+	
+	/**
+	 * Returns the node with the specified value
+	 * or null if no node with the specified value
+	 * exist.
+	 *
+	 */
 	public SimpleTree.Node find(Node n, int value) {
 		if(n == null) return null;
 		if(n.value == value)
@@ -527,6 +535,27 @@ public class SimpleTree {
 			}
         		return n1;
 		}
+
+		void remove(Node node) {
+		if(this == node) {
+			this.left = this.right = null;
+			this.value = 0;
+			return;
+		}
+
+		if(this.left == node) {
+			root.left = null;
+			return;
+		}
+		if(this.right == node) {
+			root.right = null;
+			return;
+		}
+		this.left.remove(node);
+		this.right.remove(node);
+		
+	}
+
 			
 	}
 }
