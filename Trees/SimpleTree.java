@@ -36,10 +36,7 @@ public class SimpleTree {
 		root = buildTree(a);		
 	}
 
-	public SimpleTree.Node getRoot() {
-		return this.root;
-	}
-
+	// Helper method for SimpleTree(int[] a) constructor
 	private SimpleTree.Node buildTree(int[] a) {
 		if(a.length <= 0)
 			return null;
@@ -53,6 +50,13 @@ public class SimpleTree {
 			n.right = buildTree(Arrays.copyOfRange(a, i+1, a.length));
 			return n;
 		}
+	}
+
+	/**
+	 * Fetch the root of this SimpleTree.
+	 */
+	public SimpleTree.Node getRoot() {
+		return this.root;
 	}
 
 	/**
@@ -84,28 +88,6 @@ public class SimpleTree {
 		} else {
 			// Do nothing - value already in tree
 		}
-	}
-
-	/**
-	 * Delete the specified value from this
-	 * tree.
-	 */
-	public void delete(int value) {
-		if(root == null)
-			return;
-
-		// Algorithm
-		// Find node - if it exists
-		SimpleTree.Node node = find(root, value);
-		if(node == null) return;
-		
-		//	Node has no children
-		if(node.left == null && node.right == null)
-			root.remove(node);
-
-		//	Node has one child
-		// 	Node has two children
-
 	}
 
 	
@@ -534,28 +516,6 @@ public class SimpleTree {
 				else return n1;
 			}
         		return n1;
-		}
-
-		void remove(Node node) {
-		if(this == node) {
-			this.left = this.right = null;
-			this.value = 0;
-			return;
-		}
-
-		if(this.left == node) {
-			root.left = null;
-			return;
-		}
-		if(this.right == node) {
-			root.right = null;
-			return;
-		}
-		this.left.remove(node);
-		this.right.remove(node);
-		
-	}
-
-			
+		}			
 	}
 }
