@@ -1,9 +1,12 @@
+import java.util.*;
+
 /**
- * A classic tree data structure.
+ * A classic tree data structure with the added
+ * functionality of the Java Collection Framework.
  *
  */
 
-public class Tree {
+public class Tree extends AbstractCollection {
 
 	/**
 	 * Construct a Tree with the specified root value.
@@ -30,11 +33,47 @@ public class Tree {
 		}
 	}
 
+	/**
+ 	 * Overriding the hashcode method from the Object class.
+	 */
+	@Override
+	public boolean equals(Object object) {
+		return false;
+	}
+
+	/**
+	 * Overriding the hashcode method from the Object class.
+	 */
+	@Override
+	public int hashCode() {
+		return 0;
+	}
+
+	/**
+	 * Overriding the add method from the AbstractCollection class.
+	 * Required to make this Tree modifiable.
+	 */
+	public boolean add(Object e) {
+		System.out.println("My Method Called");
+		return true;
+	}
+
+	/**
+	 * Overriding the size method from the AbstractCollection class.
+	 */
+	@Override
 	public int size() {
 		return size;
 	}
 
-	
+	/**
+	 * Overriding the iterator method from the AbstractCollection class.
+	 */
+	@Override
+	public Iterator iterator() {
+		return null;
+	}
+
 
 
 
