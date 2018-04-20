@@ -11,16 +11,16 @@ public class Tree extends AbstractCollection {
 	/**
 	 * Construct a Tree with the specified root value.
 	 */
-	public Tree(Object value) {
-		this.value = value;
+	public Tree(Object data) {
+		this.data = data;
 	}
 
 	/**
 	 * Construct a Tree with the specified root value
 	 * and the specified left and right subtrees.
 	 */
-	public Tree(Object value, Tree left, Tree right) {
-		this(value);
+	public Tree(Object data, Tree left, Tree right) {
+		this(data);
 		if(left != null) {
 			this.left = left;
 			left.parent = this;
@@ -38,7 +38,16 @@ public class Tree extends AbstractCollection {
 	 */
 	@Override
 	public boolean equals(Object object) {
-		return false;
+		if(object == this)
+			return true;
+		if(!(object instanceof Tree))
+			return false;
+		Tree tree = (Tree)object;
+		return (tree.data.equals(data) ||
+			tree.left.equals(left) ||
+			tree.right.equals(right) ||
+			tree.parent.equals(parent) ||
+			tree.size() == size);
 	}
 
 	/**
@@ -75,9 +84,8 @@ public class Tree extends AbstractCollection {
 	}
 
 
-
-
-	private Object value;
+	// Components
+	private Object data;
 	private Tree parent;
 	private Tree left;
 	private Tree right;
