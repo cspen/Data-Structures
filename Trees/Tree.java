@@ -55,7 +55,7 @@ public class Tree extends AbstractCollection {
 	 */
 	@Override
 	public int hashCode() {
-		return 0;
+		return data.hashCode() + left.hashCode() + right.hashCode() + size;
 	}
 
 	/**
