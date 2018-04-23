@@ -76,11 +76,29 @@ public class Tree extends AbstractCollection {
 	}
 
 	/**
-	 * Overriding the iterator method from the AbstractCollection class.
+	 * Implementing the iterator method from the AbstractCollection class.
 	 */
 	@Override
 	public Iterator iterator() {
 		return null;
+	}
+
+	/**
+	 *
+	 */
+	abstract public class TreeIterator {
+		protected boolean rootDone;
+		protected TreeIterator lit, rit;
+
+		public boolean hasNext() {
+			return (!rootDone || lit != null && lit.hasNext() || rit != null && rit.hasNext());
+		}
+
+		abstract public Object next();
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
 	}
 
 
