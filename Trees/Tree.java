@@ -1,12 +1,11 @@
 import java.util.*;
 
 /**
- * A classic tree data structure with the added
- * functionality of the Java Collection Framework.
+ * A classic tree data structure
  *
  */
 
-public class Tree extends AbstractCollection {
+public class Tree {
 
 	/**
 	 * Construct a Tree with the specified root value.
@@ -59,29 +58,45 @@ public class Tree extends AbstractCollection {
 	}
 
 	/**
-	 * Overriding the add method from the AbstractCollection class.
-	 * Required to make this Tree modifiable.
+	 * The size of this tree.
 	 */
-	public boolean add(Object e) {
-		System.out.println("My Method Called");
-		return true;
-	}
-
-	/**
-	 * Overriding the size method from the AbstractCollection class.
-	 */
-	@Override
 	public int size() {
 		return size;
 	}
 
 	/**
-	 * Implementing the iterator method from the AbstractCollection class.
+	 * Iterator for this tree.
 	 */
-	@Override
 	public Iterator iterator() {
-		return null;
-	}
+		return new java.util.Iterator() {
+			private boolean rootDone;
+			private Iterator lit, rit;
+
+			public boolean hasNext() {
+				return (!rootDone || lit != null && lit.hasNext() || rit != null && rit.hasNext());
+			}
+
+			
+			public Object next() {
+				if(!rootDone) {
+					if(left != null) lit = left.iterator();
+					if(right != null) rit = right.iterator();
+					rootDone = true;
+					return data;
+				}
+
+				if(lit != null && lit.hasNext())
+					return lit.next();
+				if(rit != null && rit.hasNext())
+					return rit.next();
+				return null;
+			}
+			
+			public void remove()  {
+				throw new UnsupportedOperationException();
+			} 
+		};
+	} 
 
 	/**
 	 *
