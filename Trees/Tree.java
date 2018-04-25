@@ -116,6 +116,75 @@ public class Tree {
 		}
 	}
 
+	// Max Howell's question from Google
+	// AKA reflect, reverse
+	public void invert(Tree root) {
+
+	}
+
+	public void defoliate(Tree root) {
+
+	}
+
+	public void insert(Tree node) {
+
+	}
+
+	public void remove(Tree node) {
+
+	}
+
+	public Tree find(Object data) {
+		return null;
+	}
+
+	public void printPreOrder(Tree root) {
+
+	}
+
+	public void printInOrder(Tree root) {
+
+	}
+
+	public void printPostOrder(Tree root) {
+
+	}
+
+	public void printLevelOrder(Tree root) {
+
+	}
+
+	public void printbreadthFirst() {
+
+	}
+
+	public void printDepthFirst() {
+
+	}
+
+	public int height(Tree root) {
+		return 0;
+	}
+
+	public Object min(Tree root) {
+		return null;
+	}
+
+	public Object max(Tree root) {
+		return null;
+	}
+
+	public int leaves(Tree root) {
+		return 0;
+	}
+
+	public boolean isBinarySearchTree(Tree root) {
+		return false;
+	}
+
+	public boolean equals(Tree root1, Tree root2) {
+		return false;
+	}
 
 	// Components
 	private Object data;
