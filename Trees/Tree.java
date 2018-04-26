@@ -186,6 +186,10 @@ public class Tree {
 		return false;
 	}
 
+	public int level(Object object) {
+		return 0;
+	}
+
 	// Components
 	private Object data;
 	private Tree parent;
