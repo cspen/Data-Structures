@@ -33,6 +33,17 @@ public class Tree {
 	}
 
 	/**
+	 * Convert a integer array to a tree. If the array is sorted it
+	 * will be converted to a binary search tree.
+	 *
+	 * Google Interview Question: Given a sorted integer array, write
+	 * a method that converts it to a binary search tree.
+	 */
+	public Tree(int[] a) {
+		
+	}
+
+	/**
  	 * Overriding the hashcode method from the Object class.
 	 */
 	@Override
