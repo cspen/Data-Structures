@@ -153,8 +153,12 @@ public class Tree {
 
 	}
 
-	public void printInOrder(Tree root) {
-
+	public static void printInOrder(Tree root) {
+		if(root != null) {
+			printInOrder(root.left);
+			System.out.println(root.data);
+			printInOrder(root.right);
+		} 
 	}
 
 	public void printPostOrder(Tree root) {
