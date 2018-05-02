@@ -150,7 +150,11 @@ public class Tree {
 	}
 
 	public void printPreOrder(Tree root) {
-
+		if(root != null) {
+			System.out.println(root.data);
+			printPreOrder(root.left);
+			printPreOrder(root.right);
+		}
 	}
 
 	public static void printInOrder(Tree root) {
@@ -162,7 +166,11 @@ public class Tree {
 	}
 
 	public void printPostOrder(Tree root) {
-
+		if(root != null) {
+			printPostOrder(root.left);
+			printPostOrder(root.right);
+			System.out.println(root.data);
+		}
 	}
 
 	public void printLevelOrder(Tree root) {
