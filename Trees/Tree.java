@@ -213,6 +213,11 @@ public class Tree {
 		return 0;
 	}
 
+	// Diameter of a tree is the longest path between two leaf nodes in a tree.
+	public int diameter(Tree root) {
+		return 0;
+	}
+
 	// Components
 	private Object data;
 	private Tree parent;
