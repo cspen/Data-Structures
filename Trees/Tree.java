@@ -218,6 +218,47 @@ public class Tree {
 		return 0;
 	}
 
+	public void createTreePreOrder(Object[] a) {
+	}
+
+	public void createTreeInOrder(Object[] a) {
+	}
+
+	public void createTreePostOrder(Object[] a) {
+	}
+
+	// A height-balanced binary tree is defined as a binary tree in which the depth of
+	// the two subtrees of every node never differ by more than 1. 
+	public boolean isHeightBalanced(Tree root) {
+		return true;
+	}
+
+	// Cousin nodes: same level of the Binary Tree and have different parents
+	public boolean cousinNodes(Tree root, Tree node1, Tree node2) {
+		return true;
+	}
+
+	// This is also called zig-zag order traversal of a binary tree. Approach: To print the 
+	// nodes in spiral order, nodes at different levels should be printed in alternating order. 
+	public void recursiveSpiralOrderTraversal(Tree root) {
+	}
+
+	// Given two values k1 and k2 (where k1 < k2) and a root pointer to a Binary Search Tree.
+	// Print all the keys of tree in range k1 to k2. i.e. print all x such that  k1<=x<=k2 and 
+	// x is a element of given BST.
+	public void printRange(Tree root, Object k1, Object k2) {
+	}
+
+
+	public void recursiveLevelOrderTraversal(Tree root) {
+	}
+
+
+	
+
+	
+
+
 	// Components
 	private Object data;
 	private Tree parent;
