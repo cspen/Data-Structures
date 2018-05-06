@@ -12,6 +12,7 @@ public class Tree {
 	 */
 	public Tree(Object data) {
 		this.data = data;
+		size = 1;
 	}
 
 	/**
