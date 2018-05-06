@@ -65,7 +65,12 @@ public class Tree {
 	 */
 	@Override
 	public int hashCode() {
-		return data.hashCode() + left.hashCode() + right.hashCode() + size;
+		int hash = data.hashCode() + size;
+		if(left != null)
+			hash += left.hashCode();
+		if(right != null)
+			hash += right.hashCode();
+		return hash;
 	}
 
 	/**
