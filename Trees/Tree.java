@@ -45,7 +45,8 @@ public class Tree {
 	}
 
 	/**
- 	 * Overriding the hashcode method from the Object class.
+ 	 * Overriding the equals method from the Object class.
+	 *
 	 */
 	@Override
 	public boolean equals(Object object) {
@@ -54,11 +55,16 @@ public class Tree {
 		if(!(object instanceof Tree))
 			return false;
 		Tree tree = (Tree)object;
-		return (tree.data.equals(data) ||
-			tree.left.equals(left) ||
-			tree.right.equals(right) ||
-			tree.parent.equals(parent) ||
-			tree.size() == size);
+		boolean b = tree.data.equals(data);
+		if(tree.left != null)
+			b = (b && tree.left.equals(left));
+		if(tree.right != null)
+			b = (b && tree.right.equals(right));
+		if(tree.parent != null)
+			b = (b && tree.parent.equals(parent));
+		b = (b && tree.size() == size);
+
+		return b;
 	}
 
 	/**
@@ -75,7 +81,7 @@ public class Tree {
 	}
 
 	/**
-	 * The size of this tree.
+	 * The number of nodes in this tree.
 	 */
 	public int size() {
 		return size;
