@@ -52,6 +52,9 @@ public class TreeTest {
 		System.out.println();
 
 		java.util.Iterator it = tree3.iterator();
+		while(it.hasNext()) {
+			System.out.println("Next node: " + it.next());
+		}
 		
 	}
 }
