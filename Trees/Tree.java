@@ -141,8 +141,16 @@ public class Tree {
 
 	// Max Howell's question from Google
 	// AKA reflect, reverse
-	public void invert(Tree root) {
-
+	public static void invert(Tree root) {
+		if(root == null)
+			return;
+		if(root.left != null)
+			invert(root.left);
+		if(root.right != null)
+			invert(root.right);
+		Tree temp = root.right;
+		root.right = root.left;
+		root.left = temp;
 	}
 
 	public void defoliate(Tree root) {

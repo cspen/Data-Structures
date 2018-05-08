@@ -51,10 +51,29 @@ public class TreeTest {
 		System.out.println("Tree4 HashCode: " + tree4.hashCode());
 		System.out.println();
 
+		// Test the iterator
 		java.util.Iterator it = tree3.iterator();
 		while(it.hasNext()) {
 			System.out.println("Next node: " + it.next());
 		}
+		System.out.println("\n\n\n");
+
+		// Test invert function
+		System.out.println("Creating tree7...");
+		Tree treeA = new Tree("One");
+		Tree treeB = new Tree("Two");
+		Tree treeC = new Tree("Three", treeA, treeB);
+		Tree treeD = new Tree("Four");
+		Tree treeE = new Tree("Five");
+		Tree treeF = new Tree("Six", treeD, treeE);
+		Tree tree7 = new Tree("Seven", treeC, treeF);
+
+		Tree.printInOrder(tree7);
+		System.out.println();
+		Tree.invert(tree7);
+		Tree.printInOrder(tree7);
+		System.out.println();
+
 		
 	}
 }
