@@ -91,14 +91,7 @@ public class Tree {
 	 * Iterator for this tree.
 	 */
 	public Iterator iterator() {
-		return new java.util.Iterator() {
-			private boolean rootDone;
-			private Iterator lit, rit;
-
-			public boolean hasNext() {
-				return (!rootDone || lit != null && lit.hasNext() || rit != null && rit.hasNext());
-			}
-
+		return new abstractTreeIterator() {
 			
 			public Object next() {
 				if(!rootDone) {
@@ -114,19 +107,15 @@ public class Tree {
 					return rit.next();
 				return null;
 			}
-			
-			public void remove()  {
-				throw new UnsupportedOperationException();
-			} 
 		};
 	} 
 
 	/**
 	 *
 	 */
-	abstract public class TreeIterator {
+	abstract public class abstractTreeIterator implements java.util.Iterator {
 		protected boolean rootDone;
-		protected TreeIterator lit, rit;
+		protected Iterator lit, rit;
 
 		public boolean hasNext() {
 			return (!rootDone || lit != null && lit.hasNext() || rit != null && rit.hasNext());
