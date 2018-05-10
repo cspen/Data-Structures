@@ -111,7 +111,7 @@ public class Tree {
 	} 
 
 	/**
-	 *
+	 * Partial abstractTreeIterator implementation.
 	 */
 	abstract public class abstractTreeIterator implements java.util.Iterator {
 		protected boolean rootDone;
@@ -142,8 +142,28 @@ public class Tree {
 		root.left = temp;
 	}
 
-	public void defoliate(Tree root) {
-
+	
+	public static void defoliate(Tree root) {
+		if(root == null)
+			return;
+		if(root.left != null) {
+			if(root.left.left == null && root.left.right == null) {
+				root.left = null;
+			} else {
+				Tree.defoliate(root.left);
+			}
+		}
+		if(root.right != null) {
+			if(root.right.left == null && root.right.right == null) {
+				root.right = null;
+			} else {
+				Tree.defoliate(root.right);
+			}
+		}
+		if(root.left == null && root.right == null) {
+			root.data = null;
+		}
+		
 	}
 
 	public void insert(Tree node) {

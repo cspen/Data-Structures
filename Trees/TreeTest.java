@@ -68,12 +68,20 @@ public class TreeTest {
 		Tree treeF = new Tree("Six", treeD, treeE);
 		Tree tree7 = new Tree("Seven", treeC, treeF);
 
+		System.out.println("Inverting...");
 		Tree.printInOrder(tree7);
 		System.out.println();
 		Tree.invert(tree7);
 		Tree.printInOrder(tree7);
 		System.out.println();
 
+		// Test defoliate function
+		System.out.println("Defoliating...");
+		Tree.printInOrder(tree7);
+		System.out.println();
+		Tree.defoliate(tree7);
+		Tree.printInOrder(tree7);
+		System.out.println();
 		
 	}
 }
