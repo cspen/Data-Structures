@@ -50,20 +50,15 @@ public class Tree {
 	 */
 	@Override
 	public boolean equals(Object object) {
-		if(object == this)
-			return true;
-		if(!(object instanceof Tree))
-			return false;
+		if(object == this) return true;
+		if(!(object instanceof Tree)) return false;
+
 		Tree tree = (Tree)object;
 		boolean b = tree.data.equals(data);
-		if(tree.left != null)
-			b = (b && tree.left.equals(left));
-		if(tree.right != null)
-			b = (b && tree.right.equals(right));
-		if(tree.parent != null)
-			b = (b && tree.parent.equals(parent));
+		if(tree.left != null) b = (b && tree.left.equals(left));
+		if(tree.right != null) b = (b && tree.right.equals(right));
+		if(tree.parent != null) b = (b && tree.parent.equals(parent));
 		b = (b && tree.size() == size);
-
 		return b;
 	}
 
@@ -73,10 +68,8 @@ public class Tree {
 	@Override
 	public int hashCode() {
 		int hash = data.hashCode() + size;
-		if(left != null)
-			hash += left.hashCode();
-		if(right != null)
-			hash += right.hashCode();
+		if(left != null) hash += left.hashCode();
+		if(right != null) hash += right.hashCode();
 		return hash;
 	}
 
@@ -131,12 +124,9 @@ public class Tree {
 	// Max Howell's question from Google
 	// AKA reflect, reverse
 	public static void invert(Tree root) {
-		if(root == null)
-			return;
-		if(root.left != null)
-			invert(root.left);
-		if(root.right != null)
-			invert(root.right);
+		if(root == null) return;
+		if(root.left != null) invert(root.left);
+		if(root.right != null) invert(root.right);
 		Tree temp = root.right;
 		root.right = root.left;
 		root.left = temp;
@@ -144,8 +134,7 @@ public class Tree {
 
 	
 	public static void defoliate(Tree root) {
-		if(root == null)
-			return;
+		if(root == null) return;
 		if(root.left != null) {
 			if(root.left.left == null && root.left.right == null) {
 				root.left = null;
@@ -167,11 +156,11 @@ public class Tree {
 	}
 
 	public void insert(Tree node) {
-
+		
 	}
 
 	public void remove(Tree node) {
-
+	
 	}
 
 	public Tree find(Object data) {
@@ -218,12 +207,16 @@ public class Tree {
 		return 0;
 	}
 
-	public Object min(Tree root) {
-		return null;
+	// Returns the min value of BST
+	public Object min() {
+		if(this.left == null) return this.data;
+		return this.left.min();
 	}
 
+	// Return the eax value of BST
 	public Object max(Tree root) {
-		return null;
+		if(this.right == null) return this.data;
+		return this.right.max();
 	}
 
 	public int leaves(Tree root) {
