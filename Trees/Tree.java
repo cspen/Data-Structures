@@ -213,21 +213,29 @@ public class Tree {
 		return this.left.min();
 	}
 
-	// Return the eax value of BST
+	// Return the max value of BST
 	public Object max(Tree root) {
 		if(this.right == null) return this.data;
 		return this.right.max();
 	}
 
-	public int leaves(Tree root) {
-		return 0;
+	// Number of leaves on the specified tree
+	public static int leaves(Tree root) {
+		if(root == null) return 0;
+		if(root.left == null && root.right == null) return 1;
+
+		int leftLeaves = 0;
+		int rightLeaves = 0;
+		if(root.left != null) leftLeaves = leaves(root.left);
+		if(root.right != null) rightLeaves = leaves(root.right);
+		return leftLeaves + rightLeaves;
 	}
 
 	public boolean isBinarySearchTree(Tree root) {
 		return false;
 	}
 
-	public boolean equals(Tree root1, Tree root2) {
+	public static boolean equals(Tree root1, Tree root2) {
 		return false;
 	}
 
