@@ -217,7 +217,7 @@ public class Tree {
 	// Return the max value of BST
 	public static Object max(Tree root) {
 		if(root.right == null) return root.data;
-		return root.right.max();
+		return Tree.max(root.right);
 	}
 
 	// Number of leaves on the specified tree
@@ -234,7 +234,8 @@ public class Tree {
 
 	// Only works for numeric values
 	public static boolean isBinarySearchTree(Tree root, int min, int max) {
-		}
+		
+	}
 
 	public static boolean equals(Tree root1, Tree root2) {
 		return false;
