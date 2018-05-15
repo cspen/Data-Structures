@@ -208,15 +208,16 @@ public class Tree {
 	}
 
 	// Returns the min value of BST
-	public Object min() {
-		if(this.left == null) return this.data;
-		return this.left.min();
+	public static Object min(Tree root) {
+		if(root == null) return null;
+		if(root.left == null) return root.data;
+		return Tree.min(root.left);
 	}
 
 	// Return the max value of BST
-	public Object max(Tree root) {
-		if(this.right == null) return this.data;
-		return this.right.max();
+	public static Object max(Tree root) {
+		if(root.right == null) return root.data;
+		return root.right.max();
 	}
 
 	// Number of leaves on the specified tree
@@ -231,9 +232,9 @@ public class Tree {
 		return leftLeaves + rightLeaves;
 	}
 
-	public boolean isBinarySearchTree(Tree root) {
-		return false;
-	}
+	// Only works for numeric values
+	public static boolean isBinarySearchTree(Tree root, int min, int max) {
+		}
 
 	public static boolean equals(Tree root1, Tree root2) {
 		return false;
