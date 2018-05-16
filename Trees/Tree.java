@@ -233,8 +233,15 @@ public class Tree {
 	}
 
 	// Only works for numeric values
+	// For this to work with objects it will need a comparator
 	public static boolean isBinarySearchTree(Tree root, int min, int max) {
-		
+		if(root == null) return true;
+		if(root.left == null && root.right == null) return true;
+
+		if (root.data < min) return false;
+        	if (root.data > max) return false;
+		return isBinarySearchTree(root.left, min, root.data) && isBinarySearchTree(root.right, root.data, max);
+	
 	}
 
 	public static boolean equals(Tree root1, Tree root2) {
