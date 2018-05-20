@@ -234,6 +234,7 @@ public class Tree {
 
 	// Only works for numeric values
 	// For this to work with objects it will need a comparator
+	/*
 	public static boolean isBinarySearchTree(Tree root, int min, int max) {
 		if(root == null) return true;
 		if(root.left == null && root.right == null) return true;
@@ -243,8 +244,19 @@ public class Tree {
 		return isBinarySearchTree(root.left, min, root.data) && isBinarySearchTree(root.right, root.data, max);
 	
 	}
+	*/
 
 	public static boolean equals(Tree root1, Tree root2) {
+		if(root1 == null && root2 == null) return true;
+		if(root1 == null && root2 != null) return false;
+		if(root1 != null && root2 == null) return false;
+
+		if(root1.left != null && root2 != null)
+			return equals(root1.left, root2.left);
+		if(root1.right != null && root2.right != null)
+			return equals(root1.right, root2.right);
+		if(root1.data.equals(root2.data))
+			return true;
 		return false;
 	}
 
