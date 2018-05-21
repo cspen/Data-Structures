@@ -82,6 +82,12 @@ public class TreeTest {
 		Tree.defoliate(tree7);
 		Tree.printInOrder(tree7);
 		System.out.println();
+
+		// Test the equals(Tree, Tree) function
+		System.out.println("Testing equals function...");
+		System.out.println("Equals(T3, T4): " + Tree.equals(tree3, tree4));
+		System.out.println("Testing equals function...");
+		System.out.println("Equals(T3, T5): " + Tree.equals(tree3, tree5));
 		
 	}
 }
