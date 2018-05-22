@@ -86,7 +86,9 @@ public class TreeTest {
 		// Test the equals(Tree, Tree) function
 		System.out.println("Testing equals function...");
 		System.out.println("Equals(T3, T4): " + Tree.equals(tree3, tree4));
-		System.out.println("Testing equals function...");
+		System.out.println("Equals(T3, T5): " + Tree.equals(tree3, tree5));
+		System.out.println("Equals(null, null): " + Tree.equals(null, null));
+		System.out.println("Equals(T3, null): " + Tree.equals(tree3, null));
 		System.out.println("Equals(T3, T5): " + Tree.equals(tree3, tree5));
 		
 	}
