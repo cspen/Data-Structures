@@ -167,6 +167,8 @@ public class Tree {
 		return null;
 	}
 
+	// A depth first traversal
+	// Root - Left - Right
 	public void printPreOrder(Tree root) {
 		if(root != null) {
 			System.out.println(root.data);
@@ -175,6 +177,8 @@ public class Tree {
 		}
 	}
 
+	// A depth first traversal
+	// Left - Root - Right
 	public static void printInOrder(Tree root) {
 		if(root != null) {
 			printInOrder(root.left);
@@ -183,6 +187,8 @@ public class Tree {
 		} 
 	}
 
+	// A depth first traversal
+	// Left - Right - Root
 	public void printPostOrder(Tree root) {
 		if(root != null) {
 			printPostOrder(root.left);
@@ -191,15 +197,8 @@ public class Tree {
 		}
 	}
 
+	// Breadth first traversal
 	public void printLevelOrder(Tree root) {
-
-	}
-
-	public void printbreadthFirst() {
-
-	}
-
-	public void printDepthFirst() {
 
 	}
 
@@ -241,8 +240,7 @@ public class Tree {
 
 		if (root.data < min) return false;
         	if (root.data > max) return false;
-		return isBinarySearchTree(root.left, min, root.data) && isBinarySearchTree(root.right, root.data, max);
-	
+		return isBinarySearchTree(root.left, min, root.data) && isBinarySearchTree(root.right, root.data, max);	
 	}
 	*/
 
