@@ -257,9 +257,43 @@ public class Tree {
 			return true;
 		return false;
 	}
+  
+	public int level(Node root, Object object) {
+		ArrayQueue q1 = new ArrayQueue();
+		ArrayQueue q2 = new ArrayQueue();
+		q1.enqueue(root);
+		int level = 0;
 
-	public int level(Object object) {
-		return 0;
+		while((q1.size() > 0) || (q2.size() > 0)) { 
+			while(q1.size() > 0) { 
+				Node node = (Node)q1.dequeue();
+				if(node.data.equals(object)) {
+					return level;					
+				}
+				if(node.left != null) {
+					q2.enqueue(node.left);
+				}
+				if(node.right != null) {
+					q2.enqueue(node.right);
+				}
+				
+			}
+			level++;
+			while(q2.size() > 0) {
+				Node node = (Node)q2.dequeue();
+				if(node.data.equals(object)) {
+					return level;
+				}
+				if(node.left != null) {
+					q1.enqueue(node.left);
+				}
+				if(node.right != null) {
+					q1.enqueue(node.right);
+				}
+			}
+			level++;
+		}
+		return -1;
 	}
 
 	// Diameter of a tree is the longest path between two leaf nodes in a tree.
