@@ -301,12 +301,18 @@ public class Tree {
 		return 0;
 	}
 
-	public void createTreePreOrder(Object[] a) {
+	// Build a tree from the String array contents.
+	// String array must consist of N's and L's (any case)
+	// N stands for node and L stands for leaf
+	public Tree createTreePreOrder(Object[] preorder, Object[] inorder, int start, int end) {
+		
 	}
 
+	// See comments for createTreePreOrder
 	public void createTreeInOrder(Object[] a) {
 	}
 
+	// See comments for createTreePreOrder
 	public void createTreePostOrder(Object[] a) {
 	}
 
