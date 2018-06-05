@@ -211,7 +211,33 @@ public class Tree {
 	}
 
 	public int height(Tree root) {
-		return 0;
+		if(root == null)
+			return -1;
+
+		int leftHeight;
+		int rightHeight;
+
+		// Get left height
+		if(root.left == null)
+			leftHeight = -1;
+		else
+			leftHeight = height(root.left);
+
+
+		// Get right height
+		if(root.right == null)
+			rightHeight = -1;
+		else
+			rightHeight = height(root.right);
+
+		// Determine which is higher - left or right
+		int result;
+		if(leftHeight < rightHeight) 
+			result =  1 + rightHeight;
+		else
+			result = 1 + leftHeight;
+
+		return result;
 	}
 
 	// Returns the min value of BST
