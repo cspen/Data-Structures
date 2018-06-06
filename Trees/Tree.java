@@ -332,7 +332,15 @@ public class Tree {
 
 	// Diameter of a tree is the longest path between two leaf nodes in a tree.
 	public int diameter(Tree root) {
-		return 0;
+		if(root == null) return 0;
+
+		int lheight = height(root.left);
+		int rheight = height(root.right);
+
+		int ldia = diameter(root.left);
+		int rdia = diameter(root.right);
+
+		return Math.max(lheight + rheight + 1, max(ldia, rdia));
 	}
 
 	// Build a tree from the String array contents.
