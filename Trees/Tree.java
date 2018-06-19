@@ -265,9 +265,10 @@ public class Tree {
 		return leftLeaves + rightLeaves;
 	}
 
+	/*
 	// Only works for numeric values
 	// For this to work with objects it will need a comparator
-	/*
+	//
 	public static boolean isBinarySearchTree(Tree root, int min, int max) {
 		if(root == null) return true;
 		if(root.left == null && root.right == null) return true;
@@ -292,7 +293,7 @@ public class Tree {
 		return false;
 	}
   
-	public int level(Node root, Object object) {
+	public int level(Tree root, Object object) {
 		ArrayQueue q1 = new ArrayQueue();
 		ArrayQueue q2 = new ArrayQueue();
 		q1.enqueue(root);
@@ -300,7 +301,7 @@ public class Tree {
 
 		while((q1.size() > 0) || (q2.size() > 0)) { 
 			while(q1.size() > 0) { 
-				Node node = (Node)q1.dequeue();
+				Tree node = (Tree)q1.dequeue();
 				if(node.data.equals(object)) {
 					return level;					
 				}
@@ -314,7 +315,7 @@ public class Tree {
 			}
 			level++;
 			while(q2.size() > 0) {
-				Node node = (Node)q2.dequeue();
+				Tree node = (Tree)q2.dequeue();
 				if(node.data.equals(object)) {
 					return level;
 				}
@@ -340,17 +341,17 @@ public class Tree {
 		int ldia = diameter(root.left);
 		int rdia = diameter(root.right);
 
-		return Math.max(lheight + rheight + 1, max(ldia, rdia));
+		return Math.max(lheight + rheight + 1, Math.max(ldia, rdia));
 	}
 
 	// Build a tree from the String array contents.
 	// String array must consist of N's and L's (any case)
 	// N stands for node and L stands for leaf
 	public Tree createTreePreOrder(Object[] preorder, Object[] inorder, int start, int end) {
-		
+		return null;
 	}
 
-
+/** 
 public TreeNode buildTree(int[] preorder, int[] inorder) {
     int preStart = 0;
     int preEnd = preorder.length-1;
@@ -382,6 +383,7 @@ public TreeNode construct(int[] preorder, int preStart, int preEnd, int[] inorde
  
     return p;
 }
+*/
 
 
 
@@ -449,9 +451,6 @@ public TreeNode construct(int[] preorder, int preStart, int preEnd, int[] inorde
 
 	public void recursiveLevelOrderTraversal(Tree root) {
 	}
-
-
-	
 
 	
 
