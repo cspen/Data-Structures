@@ -8,23 +8,42 @@
 public class LinkedList {
 
 	public LinkedList() {
+		this.head = null;
+		this.tail = null;
 	}
 
-	// Need to add basic functionality	
+	// Need to add basic functionality
 
-	private static class Node {
+	public void add(Object obj) {
+		if(this.head != null) {
+			this.head = new ListNode(obj);
+			this.tail = this.head;
+		} else {
+			this.tail.next = new ListNode(obj);
+			this.tail = this.tail.next;
+		}
+	}
+		
+
+	private static class ListNode {
 		ListNode() {
 			this.data = null;
 			this.next = null;
 		}
 
 		ListNode(Object data, ListNode next) {
-			this.data = date;
+			this.data = data;
 			this.next = next;
 		}
 
 		ListNode(Object data) {
-			super(data, null);
+			this(data, null);
 		}
-	}	
+
+		private ListNode next;
+		private Object data;
+	}
+
+	private ListNode head;
+	private ListNode tail;
 }
