@@ -1,8 +1,8 @@
 import java.util.*;
 
-public abstract class AbstractQueue extends AbstractCollection {
+public abstract class MyAbstractQueue extends AbstractCollection {
 
-	protected AbstractQueue() {}
+	protected MyAbstractQueue() {}
 
 	public boolean equals(Object object) {
 		if(object == this) return true;

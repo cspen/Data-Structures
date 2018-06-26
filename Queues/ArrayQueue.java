@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ArrayQueue extends AbstractQueue {
+public class ArrayQueue extends MyAbstractQueue {
 
 	private Object[] objects;
 	private int front = 0;
@@ -67,6 +67,10 @@ public class ArrayQueue extends AbstractQueue {
 
 	public int size() {
 		return back - front;
+	}
+
+	public boolean isEmpty() {
+		return back == front;
 	}
 
 	public Iterator iterator() {
