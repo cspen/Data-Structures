@@ -17,7 +17,7 @@ public class TreeTest {
 		Tree.printInOrder(null);
 
 		System.out.println("Size = " + tree3.size());
-
+		/*
 		// Test equals method
 		// The Java language requires two equal objects to also
 		// have equal hash codes.
@@ -90,6 +90,8 @@ public class TreeTest {
 		System.out.println("Equals(null, null): " + Tree.equals(null, null));
 		System.out.println("Equals(T3, null): " + Tree.equals(tree3, null));
 		System.out.println("Equals(T3, T5): " + Tree.equals(tree3, tree5));
-		
+		*/
+
+		// Test the 
 	}
 }
