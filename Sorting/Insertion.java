@@ -1,12 +1,14 @@
-
+import java.util.*;
 
 public class Insertion {
 
 	public static void main(String[] args) {
-		int i = 9;
-		System.out.println(i);
-		plusOne(i);
-		System.out.println(i);
+		int[] theArr = new int[20];
+		System.out.println(Arrays.toString(theArr));
+		randomFill(theArr);
+		System.out.println(Arrays.toString(theArr));
+		insertionSort(theArr);
+		System.out.println(Arrays.toString(theArr));
 	}
 
 	public static void insertionSort(int[] a) {
@@ -25,5 +27,11 @@ public class Insertion {
 		int temp = a[x];
 		a[x] = a[y];
 		a[y] = temp;
+	}
+
+	public static void randomFill(int[] a) {
+		for(int i = 0; i < a.length; i++) {
+			a[i] = (int)(Math.random() * 100 + 1);
+		}
 	}
 }
