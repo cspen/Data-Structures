@@ -10,6 +10,11 @@ public class Bubble {
 		System.out.println(Arrays.toString(theArr));
 		sort(theArr);
 		System.out.println(Arrays.toString(theArr));
+		System.out.println();
+		specificFill(theArr);
+		System.out.println(Arrays.toString(theArr));
+		sort(theArr);
+		System.out.println(Arrays.toString(theArr));
 	}
 
 	public static void sort(int[] a) {
@@ -26,6 +31,14 @@ public class Bubble {
 	public static void randomFill(int[] a) {
 		for(int i = 0; i < a.length; i++) {
 			a[i] = (int)(Math.random() * 100 + 1);
+		}
+	}
+
+	public static void specificFill(int[] a) {
+		int value = 200;
+		for(int i = 0; i < a.length; i++) {
+			a[i] = value;
+			value -= 5;
 		}
 	}
 }
