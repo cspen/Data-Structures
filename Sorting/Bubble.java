@@ -35,10 +35,13 @@ public class Bubble {
 	}
 
 	public static void specificFill(int[] a) {
-		int value = 200;
+		int value = 100;
 		for(int i = 0; i < a.length; i++) {
 			a[i] = value;
-			value -= 5;
+			if(i%2 == 0)
+				value++;
+			else
+				value /= 2;
 		}
 	}
 }
