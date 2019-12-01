@@ -4,6 +4,10 @@ public class Selection {
 
 	public static void main(String[] args) {
 		int[] a = new int[20];
+		randomFill(a);
+		System.out.println(Arrays.toString(a));
+		selection(a);
+		System.out.println(Arrays.toString(a));
 	}
 
 	public static void selection(int[] a) {
@@ -15,7 +19,7 @@ public class Selection {
 					min = j;
 			}
 			if(min != i) {
-				temp = a[i];
+				int temp = a[i];
 				a[i] = a[min];
 				a[min] = temp;
 			}
