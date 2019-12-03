@@ -3,15 +3,15 @@
 public class Node {
 
 	public Node() {
-		this.nextNode = null;
+		this.next = null;
 		this.data = null;
 	}
 
-	public Node(Node next, Object data) {
+	public Node(Object data) {
 		this.data = data;
-		this.nextNode = next;
+		this.next = next;
 	}
 
-	private Node nextNode;
-	private Object data;
+	public Node next;
+	public Object data;
 }
