@@ -9,14 +9,12 @@ public class Heap {
 			a[i] = (int)(Math.random()*100);
 
 		System.out.println(Arrays.toString(a));
-		System.out.println("Selection sorting...");
 		heapSort(a);
-		System.out.println("Finished sorting");
 		System.out.println(Arrays.toString(a));
 	}
 
 	public static void heapSort(int[] a) {
-		for(int i = a.length/2 - 1; i > 0; i--)
+		for(int i = a.length - 2; i > 0; i--)
 			heapify(a, 0, i);
 		for(int i = a.length - 1; i > 0; i--) {
 			swap(a, 0, i);
