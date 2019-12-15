@@ -29,24 +29,6 @@ public class Heap {
 	}
 
 	public static void heapify(int[] a, int n, int i) {
-		 int t = a[i];
-		// System.out.println("n: "+n+" i: "+i);
-		while(2*i+1 < n) {
-			System.out.println(a[i]);
-			int k = 2*i+2;
-
-			if(k < n && a[k] > t)
-				k++;
-
-			if(t >= a[k]) break;
-			
-			a[i] = a[k];
-			a[k] = t;
-			i = k;		
-
-		        heapify(a, n, t);
-		}
-			/*
 		int largest = i;
 		int l = 2*i + 1;
 		int r = 2*i + 2;
@@ -66,8 +48,6 @@ public class Heap {
         		// recursively heapify the affected sub-tree
         		heapify(a, n, largest);
     		}
-		System.out.println("WTF");
-		*/
 	}
 
 	public static void swap(int[] a, int i, int j) {
@@ -77,5 +57,30 @@ public class Heap {
 		a[i] = a[j];
 		a[j] = temp;
 	}
+
+	/**
+	 This a version I found in a book
+	 It doesn't work, but it almost does
+	 I tried to fix it - I don't think it will work
+
+	 int t = a[i];
+		// System.out.println("n: "+n+" i: "+i);
+		while(2*i+1 < n) {
+			System.out.println(a[i]);
+			int k = 2*i+2;
+
+			if(k < n && a[k] > t)
+				k++;
+
+			if(t >= a[k]) break;
+			
+			a[i] = a[k];
+			a[k] = t;
+			i = k;		
+
+		        heapify(a, n, t);
+		}
+
+	*/
 
 }
