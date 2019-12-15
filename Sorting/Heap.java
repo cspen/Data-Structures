@@ -4,16 +4,10 @@ public class Heap {
 
 	public static void main(String[] args) {
 
-		int[] a = new int[5];
-		// for(int i = 0; i < a.length; i++)
-		// 	a[i] = (int)(Math.random()*100);
+		int[] a = new int[20];
+		for(int i = 0; i < a.length; i++)
+			a[i] = (int)(Math.random()*100);
 
-		
-		a[0] = 54;
-		a[1] = 19;
-		a[2] = 91;
-		a[3] = 29;
-		a[4] = 4;
 		System.out.println(Arrays.toString(a));
 		heapSort(a);
 		System.out.println(Arrays.toString(a));
@@ -24,7 +18,7 @@ public class Heap {
 			heapify(a, a.length, i);
 		for(int i = a.length - 1; i > 0; i--) {
 			swap(a, 0, i);
-			heapify(a, 0, i-1);
+			heapify(a, i, 0);
 		}
 	}
 
