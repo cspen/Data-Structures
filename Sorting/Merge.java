@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class TestMerge {
+public class Merge {
 
 	public static void main(String[] args) {
 
-		int[] a = new int[10];
+		int[] a = new int[20];
 		for(int i = 0; i < a.length; i++)
 			a[i] = (int)(Math.random()*100);
 
