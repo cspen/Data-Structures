@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class TestQuick {
+public class Quick {
 
 	public static void main(String[] args) {
 
